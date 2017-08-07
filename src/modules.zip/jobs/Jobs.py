@@ -35,6 +35,7 @@ import inspect
 sys.path.insert(0, '..')
 
 from DMxV import *
+from ConjugateGradient import *
 from options.Mode import *
 
 
@@ -43,5 +44,13 @@ class Jobs:
     def __init__(self, args, sc):
 
         if(args.mode == Mode.DMXV):
+            print "Executing job: DMxV"
             #sc.getConf().setAppName("PyBLASpark - Example DmXV")
             exDMxV = DMxV(args.args, sc)
+        elif (args.mode == Mode.CG):
+            print "Executing job: Conjugate Gradient"
+            exConjGrad = ConjugateGradient(args.args, sc)
+            exConjGrad.solve()
+        else:
+            print "No job selected!"
+

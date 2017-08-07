@@ -53,8 +53,7 @@ if __name__ == '__main__':
 
     myOptions = Options() #options._module.Options()
 
-    if myOptions.mode == Mode.DMXV:
-        job = Jobs(myOptions, sc)
+    job = Jobs(myOptions, sc)
 
     endTime = time.clock()
 

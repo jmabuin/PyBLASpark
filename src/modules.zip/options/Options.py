@@ -40,10 +40,13 @@ class Options:
         parser.add_argument("-d", "--dmxv", action="store_true", default=False,
                             help="Performs a distributed dense matrix dot vector operation")
 
+        parser.add_argument("-s", "--smxv", action="store_true", default=False,
+                            help="Performs a distributed sparse matrix dot vector operation")
+
         parser.add_argument("-c", "--conjGrad", action="store_true", default=False,
                             help="Solves a system by using the conjugate gradient method")
 
-        parser.add_argument("-i", "--iteration", type=int, default=0,
+        parser.add_argument("-i", "--iterations", type=int, default=0,
                             help="Number of iterations to perform the conjugate gradient method")
 
         parser.add_argument("-l", "--pairLine", action="store_true", default=True,

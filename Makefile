@@ -24,4 +24,5 @@ build: clean
 	mkdir ./dist
 	cp ./src/main.py ./dist
 	cp ./script/Execute* ./dist
+	chmod +x ./dist/Execute*
 	cd ./src/modules.zip && zip -r ../../dist/modules.zip ./*
