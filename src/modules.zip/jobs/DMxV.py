@@ -34,7 +34,6 @@ class DMxV:
         # Read Matrix input data
         # inputMatrixData = readMatrixRowPerLine(self.inputMatrixPath, self.ctx)
 
-
         if (self.numPartitions != 0):
             inputMatrixData = readMatrixRowPerLine(self.inputMatrixPath, self.ctx)\
                 .map(lambda line: IndexedRow(line[0], line[1]))\
@@ -61,5 +60,7 @@ class DMxV:
         # DGEMV(alpha, A, x, beta, y, jsc):
         result = L2.DGEMV(self.alpha, inputMatrix, inputVector, self.beta, result, self.ctx)
 
-        print result
+        # writeVector(self.outputVectorPath, result)
+
+        printVector(result)
 
